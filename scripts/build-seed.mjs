@@ -9,8 +9,10 @@ import { CATEGORIES, QUESTIONS as MUFRODAT } from '../supabase/seed/data.mjs'
 import { QUESTIONS as QOWAID } from '../supabase/seed/data-qowaid.mjs'
 import { QUESTIONS as MUFRODAT2 } from '../supabase/seed/data-mufrodat-2.mjs'
 import { QUESTIONS as QOWAID2 } from '../supabase/seed/data-qowaid-2.mjs'
+import { QUESTIONS as MUFRODAT3 } from '../supabase/seed/data-mufrodat-3.mjs'
+import { QUESTIONS as QOWAID3 } from '../supabase/seed/data-qowaid-3.mjs'
 
-const MODULES = { mufrodat: MUFRODAT, qowaid: QOWAID, mufrodat2: MUFRODAT2, qowaid2: QOWAID2 }
+const MODULES = { mufrodat: MUFRODAT, qowaid: QOWAID, mufrodat2: MUFRODAT2, qowaid2: QOWAID2, mufrodat3: MUFRODAT3, qowaid3: QOWAID3 }
 const args = Object.fromEntries(process.argv.slice(2).map((a) => a.replace(/^--/, '').split('=')))
 const QUESTIONS = args.only ? MODULES[args.only] : Object.values(MODULES).flat()
 if (!QUESTIONS) throw new Error(`Modul tidak dikenal: ${args.only}`)

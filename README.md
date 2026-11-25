@@ -117,7 +117,9 @@ Bagian berlabel **Data Demo** (tantangan, badge, peringkat kelas) belum tersambu
 | `supabase/seed/data.mjs` | Kategori + **51 soal Mufrodat & Muhadatsah** |
 | `supabase/seed/data-qowaid.mjs` | **72 soal Qowaid** (Nahwu, Shorof, I'rab) |
 | `supabase/seed/data-mufrodat-2.mjs` | **117 soal Mufrodat tambahan** |
-| `supabase/seed/data-qowaid-2.mjs` | **119 soal Qowaid tambahan** — total bank soal bawaan: 359 |
+| `supabase/seed/data-qowaid-2.mjs` | **119 soal Qowaid tambahan** |
+| `supabase/seed/data-mufrodat-3.mjs` | **84 soal Mufrodat tambahan** |
+| `supabase/seed/data-qowaid-3.mjs` | **57 soal Qowaid tambahan** — total bank soal bawaan: **500** |
 | `supabase/seed/seed.sql` | Dihasilkan dengan `npm run seed:build` — aman dijalankan berulang (soal yang sudah ada dilewati) |
 
 Semua sudah diterapkan ke proyek Supabase **FUN ARENA ACP**.
