@@ -69,7 +69,7 @@ export default function SettingsPage() {
         </button>
       </form>
 
-      <Link to="/app/profil" className="card flex items-center gap-3 p-5 text-sm font-semibold text-primary hover:bg-slate-50">
+      <Link to="/app/profil" className="card flex items-center gap-3 p-5 text-sm font-semibold text-primary hover:bg-stone-50">
         <UserRound size={18} /> Ubah nickname, nama, dan avatar di halaman Profil
       </Link>
     </div>

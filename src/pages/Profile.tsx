@@ -146,7 +146,7 @@ function ProfileView() {
           ['/app/riwayat', 'Riwayat'],
           ['/pengaturan', 'Pengaturan'],
         ].map(([to, label]) => (
-          <Link key={to} to={to} className="card p-3 text-center text-primary hover:bg-slate-50">
+          <Link key={to} to={to} className="card p-3 text-center text-primary hover:bg-stone-50">
             {label}
           </Link>
         ))}
@@ -168,7 +168,7 @@ function ProfileView() {
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-semibold text-primary hover:bg-slate-50">
+          <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-semibold text-primary hover:bg-stone-50">
             {avatarBusy ? <Loader2 size={16} className="animate-spin" /> : <Camera size={16} />} Unggah foto
             <input
               type="file"

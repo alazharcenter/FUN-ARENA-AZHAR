@@ -44,12 +44,12 @@ export default function LeaderboardPage() {
           <button
             key={p.id}
             onClick={() => setPeriod(p.id)}
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition ${period === p.id ? 'bg-primary text-white' : 'bg-white text-muted ring-1 ring-line hover:bg-slate-50'}`}
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition ${period === p.id ? 'bg-primary text-white' : 'bg-white text-muted ring-1 ring-line hover:bg-stone-50'}`}
           >
             {p.label}
           </button>
         ))}
-        <Link to="/app/kelas" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-primary ring-1 ring-line hover:bg-slate-50">
+        <Link to="/app/kelas" className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-primary ring-1 ring-line hover:bg-stone-50">
           Peringkat kelas →
         </Link>
       </div>
@@ -68,7 +68,7 @@ export default function LeaderboardPage() {
             <li key={r.user_id} className={`flex items-center gap-3 px-4 py-3 ${r.is_me ? 'bg-primary/5' : ''}`}>
               <span
                 className={`grid size-8 shrink-0 place-items-center rounded-full text-sm font-extrabold ${
-                  r.rank === 1 ? 'bg-gold text-white' : r.rank === 2 ? 'bg-slate-300 text-white' : r.rank === 3 ? 'bg-orange-300 text-white' : 'bg-slate-100 text-muted'
+                  r.rank === 1 ? 'bg-gold text-white' : r.rank === 2 ? 'bg-stone-300 text-white' : r.rank === 3 ? 'bg-orange-300 text-white' : 'bg-stone-100 text-muted'
                 }`}
               >
                 {r.rank}

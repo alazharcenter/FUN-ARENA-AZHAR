@@ -40,7 +40,7 @@ export default function HistoryPage() {
           <button
             key={a ?? 'all'}
             onClick={() => (setArena(a), setPage(0))}
-            className={`rounded-full px-4 py-2 text-sm font-semibold ${arena === a ? 'bg-primary text-white' : 'bg-white text-muted ring-1 ring-line hover:bg-slate-50'}`}
+            className={`rounded-full px-4 py-2 text-sm font-semibold ${arena === a ? 'bg-primary text-white' : 'bg-white text-muted ring-1 ring-line hover:bg-stone-50'}`}
           >
             {a ? ARENA_BY_DB[a].name : 'Semua'}
           </button>
@@ -75,7 +75,7 @@ export default function HistoryPage() {
             </>
           )
           return linkable ? (
-            <Link key={h.session_id} to={`/app/hasil/${h.session_id}`} className="flex items-center gap-3 p-4 hover:bg-slate-50">
+            <Link key={h.session_id} to={`/app/hasil/${h.session_id}`} className="flex items-center gap-3 p-4 hover:bg-stone-50">
               {body}
             </Link>
           ) : (

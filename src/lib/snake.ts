@@ -103,7 +103,7 @@ export const PIECE_COLORS = [
   { name: 'Hijau', className: 'bg-emerald-500', ring: 'ring-emerald-500', text: 'text-emerald-600' },
   { name: 'Kuning', className: 'bg-amber-400', ring: 'ring-amber-400', text: 'text-amber-600' },
   { name: 'Ungu', className: 'bg-violet-500', ring: 'ring-violet-500', text: 'text-violet-600' },
-  { name: 'Hitam', className: 'bg-slate-700', ring: 'ring-slate-700', text: 'text-slate-700' },
+  { name: 'Hitam', className: 'bg-stone-700', ring: 'ring-stone-700', text: 'text-stone-700' },
   // Warna tambahan untuk room online (hingga 30 pemain; warna berulang setelah 12)
   { name: 'Oranye', className: 'bg-orange-500', ring: 'ring-orange-500', text: 'text-orange-600' },
   { name: 'Toska', className: 'bg-teal-500', ring: 'ring-teal-500', text: 'text-teal-600' },

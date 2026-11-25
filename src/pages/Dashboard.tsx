@@ -158,7 +158,7 @@ export default function Dashboard() {
             className={`flex items-center justify-center gap-2 rounded-2xl px-4 py-3.5 text-sm font-bold transition ${
               primary
                 ? 'col-span-2 bg-gold text-primary-dark shadow-sm hover:brightness-105 sm:col-span-1'
-                : 'border border-line bg-white text-primary hover:border-primary/30 hover:bg-slate-50'
+                : 'border border-line bg-white text-primary hover:border-primary/30 hover:bg-stone-50'
             }`}
           >
             <Icon size={18} /> {label}
@@ -243,7 +243,7 @@ export default function Dashboard() {
               {recent?.map((h) => {
                 const arena = ARENA_BY_DB[h.arena]
                 return (
-                  <Link key={h.session_id} to={`/app/hasil/${h.session_id}`} className="flex items-center gap-3 p-4 hover:bg-slate-50">
+                  <Link key={h.session_id} to={`/app/hasil/${h.session_id}`} className="flex items-center gap-3 p-4 hover:bg-stone-50">
                     <span className={`grid size-9 shrink-0 place-items-center rounded-lg ${arena.color.soft} ${arena.color.text}`}>
                       <ArenaIcon arena={arena.id} size={17} />
                     </span>
@@ -280,7 +280,7 @@ export default function Dashboard() {
                   <div key={r.user_id} className={`flex items-center gap-3 rounded-xl px-3 py-2.5 ${r.is_me ? 'bg-primary/5 ring-1 ring-primary/15' : ''}`}>
                     <span
                       className={`grid size-7 place-items-center rounded-full text-xs font-bold ${
-                        r.rank === 1 ? 'bg-gold text-white' : r.rank === 2 ? 'bg-slate-300 text-white' : r.rank === 3 ? 'bg-orange-300 text-white' : 'bg-slate-100 text-muted'
+                        r.rank === 1 ? 'bg-gold text-white' : r.rank === 2 ? 'bg-stone-300 text-white' : r.rank === 3 ? 'bg-orange-300 text-white' : 'bg-stone-100 text-muted'
                       }`}
                     >
                       {r.rank}

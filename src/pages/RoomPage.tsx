@@ -79,7 +79,7 @@ function Shell({ room, children }: { room: Room; children: ReactNode }) {
           >
             {live ? <Wifi size={12} /> : <WifiOff size={12} />} {live ? 'Live' : 'Sinkron'}
           </span>
-          <button onClick={leave} className="ml-auto flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-muted hover:bg-slate-100">
+          <button onClick={leave} className="ml-auto flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-muted hover:bg-stone-100">
             <LogOut size={16} /> Keluar
           </button>
         </div>
@@ -140,7 +140,7 @@ function RoomLobby({ room, data }: { room: Room; data: RoomState }) {
         <div className="card p-6 text-center">
           <p className="text-sm font-semibold text-muted">Kode room</p>
           <p className="mt-1 font-mono text-5xl font-extrabold tracking-[0.25em] text-primary sm:text-6xl">{data.room.code}</p>
-          <button onClick={copy} className="mt-4 inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-semibold text-primary hover:bg-slate-50">
+          <button onClick={copy} className="mt-4 inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-semibold text-primary hover:bg-stone-50">
             {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? 'Tautan disalin' : 'Salin tautan undangan'}
           </button>
           <p className="mt-3 text-xs text-muted">Pemain membuka menu Main Bareng → Gabung Room, lalu memasukkan kode ini.</p>
@@ -149,7 +149,7 @@ function RoomLobby({ room, data }: { room: Room; data: RoomState }) {
           <p className="text-sm font-bold">Pengaturan</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {settingsSummary(data).map((t) => (
-              <span key={t} className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-ink">
+              <span key={t} className="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-medium text-ink">
                 {t}
               </span>
             ))}
@@ -174,7 +174,7 @@ function RoomLobby({ room, data }: { room: Room; data: RoomState }) {
                 {p.user_id === data.room.host_id && <Crown size={13} className="ml-1 inline text-gold" />}
               </span>
               {!p.is_player ? (
-                <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-bold text-muted">PEMANDU</span>
+                <span className="rounded bg-stone-100 px-1.5 py-0.5 text-[10px] font-bold text-muted">PEMANDU</span>
               ) : p.is_ready ? (
                 <span className="rounded bg-emerald-50 px-1.5 py-0.5 text-[10px] font-bold text-emerald-700">SIAP</span>
               ) : (
@@ -270,7 +270,7 @@ function QuizRoom({ room, data }: { room: Room; data: RoomState }) {
           <span className="font-semibold text-muted">
             Soal <b className="text-ink">{st.index}</b> / {st.total}
           </span>
-          <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-muted">
+          <span className="rounded-full bg-stone-100 px-3 py-1 font-semibold text-muted">
             {answeredCount}/{players.length} sudah menjawab
           </span>
         </div>
@@ -293,7 +293,7 @@ function QuizRoom({ room, data }: { room: Room; data: RoomState }) {
           </p>
         )}
         {!isPlayer && !revealed && (
-          <p className="mt-5 rounded-2xl bg-slate-100 p-4 text-center text-sm text-muted">Kamu memandu permainan ini. Pembahasan terbuka otomatis.</p>
+          <p className="mt-5 rounded-2xl bg-stone-100 p-4 text-center text-sm text-muted">Kamu memandu permainan ini. Pembahasan terbuka otomatis.</p>
         )}
 
         {revealed && data.reveal?.explanation && (
@@ -463,7 +463,7 @@ function SnakeRoom({ room, data }: { room: Room; data: RoomState }) {
                   {busy ? 'Melempar…' : 'Lempar Dadu'}
                 </button>
               ) : (
-                <p className="rounded-xl bg-slate-50 px-3 py-3 text-center text-sm text-muted">
+                <p className="rounded-xl bg-stone-50 px-3 py-3 text-center text-sm text-muted">
                   {st.phase === 'question' ? `${pendingPlayer?.nickname ?? 'Pemain'} sedang menjawab…` : `Menunggu ${turnPlayer?.nickname ?? 'pemain'}…`}
                 </p>
               )}
@@ -576,7 +576,7 @@ function Results({ data }: { data: RoomState }) {
       <ol className="mt-6 space-y-2">
         {players.map((p, i) => (
           <li key={p.user_id} className={`card flex items-center gap-3 p-3 ${i === 0 ? 'ring-2 ring-gold' : ''} ${p.user_id === data.me ? 'bg-primary/5' : ''}`}>
-            <span className={`grid size-9 place-items-center rounded-full text-sm font-extrabold ${i === 0 ? 'bg-gold text-white' : i === 1 ? 'bg-slate-300 text-white' : i === 2 ? 'bg-orange-300 text-white' : 'bg-slate-100'}`}>
+            <span className={`grid size-9 place-items-center rounded-full text-sm font-extrabold ${i === 0 ? 'bg-gold text-white' : i === 1 ? 'bg-stone-300 text-white' : i === 2 ? 'bg-orange-300 text-white' : 'bg-stone-100'}`}>
               {i + 1}
             </span>
             <PlayerDot p={p} />
@@ -593,13 +593,13 @@ function Results({ data }: { data: RoomState }) {
       </ol>
       <p className="mt-3 text-center text-xs text-muted">Skor & XP sudah dicatat ke akun masing-masing pemain.</p>
       <div className="mt-6 grid gap-2 sm:grid-cols-3">
-        <Link to="/app/leaderboard" className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-slate-50">
+        <Link to="/app/leaderboard" className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-stone-50">
           Leaderboard
         </Link>
         <Link to="/app/lobby" className="rounded-xl bg-primary py-3 text-center text-sm font-bold text-white hover:bg-primary-light">
           Main bareng lagi
         </Link>
-        <Link to="/app" className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-slate-50">
+        <Link to="/app" className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-stone-50">
           Beranda
         </Link>
       </div>

@@ -13,7 +13,7 @@ export default function Dice({ value, rolling, size = 72 }: { value: number; rol
     <div
       role="img"
       aria-label={`Dadu: ${value}`}
-      className={`grid shrink-0 grid-cols-3 grid-rows-3 rounded-[22%] border-2 border-primary/15 bg-white shadow-[0_4px_0_rgba(23,59,87,0.15)] ${
+      className={`grid shrink-0 grid-cols-3 grid-rows-3 rounded-[22%] border-2 border-primary/15 bg-white shadow-[0_4px_0_rgba(90,58,48,0.18)] ${
         rolling ? 'animate-[dice-shake_0.35s_ease-in-out_infinite]' : ''
       }`}
       // Padding & jarak dalam piksel: persen pada padding dihitung dari lebar induk, bukan dadu

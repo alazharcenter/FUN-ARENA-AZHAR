@@ -102,7 +102,7 @@ export default function GamePage() {
       </div>
       <div className="mt-2 mb-5 flex gap-1">
         {Array.from({ length: q.total }, (_, i) => (
-          <span key={i} className={`h-1.5 flex-1 rounded-full ${i < q.order_index - 1 ? 'bg-primary' : i === q.order_index - 1 ? 'bg-primary/50' : 'bg-slate-200'}`} />
+          <span key={i} className={`h-1.5 flex-1 rounded-full ${i < q.order_index - 1 ? 'bg-primary' : i === q.order_index - 1 ? 'bg-primary/50' : 'bg-stone-200'}`} />
         ))}
       </div>
 
@@ -123,7 +123,7 @@ function Shell({ children, onQuit }: { children: ReactNode; onQuit: () => void }
       <header className="sticky top-0 z-10 border-b border-line bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3">
           <span className="text-sm font-bold text-primary">Quick Play</span>
-          <button onClick={onQuit} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-muted hover:bg-slate-100">
+          <button onClick={onQuit} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-muted hover:bg-stone-100">
             <X size={18} /> Akhiri
           </button>
         </div>

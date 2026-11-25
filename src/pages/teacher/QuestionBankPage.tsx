@@ -94,7 +94,7 @@ function ImportModal({ onClose, onDone }: { onClose: () => void; onDone: () => v
       </ol>
       <button
         onClick={() => downloadCsv('templat-soal-fun-arena.csv', CSV_HEADER, CSV_EXAMPLE)}
-        className="mt-4 flex items-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-semibold text-primary hover:bg-slate-50"
+        className="mt-4 flex items-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-semibold text-primary hover:bg-stone-50"
       >
         <Download size={16} /> Unduh templat CSV
       </button>
@@ -110,7 +110,7 @@ function ImportModal({ onClose, onDone }: { onClose: () => void; onDone: () => v
           <b>tingkat:</b> beginner, intermediate, advanced · <b>ragam:</b> fusha, amiyah_mesir
         </p>
       </details>
-      <label className="mt-4 flex cursor-pointer items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line p-6 text-sm font-semibold text-muted hover:bg-slate-50">
+      <label className="mt-4 flex cursor-pointer items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line p-6 text-sm font-semibold text-muted hover:bg-stone-50">
         <FileUp size={18} /> Pilih file CSV
         <input type="file" accept=".csv,text/csv" className="hidden" onChange={(e) => read(e.target.files?.[0])} />
       </label>
@@ -122,7 +122,7 @@ function ImportModal({ onClose, onDone }: { onClose: () => void; onDone: () => v
         </ul>
       )}
       {rows && (
-        <div className="mt-4 flex items-center justify-between rounded-xl bg-slate-50 p-3">
+        <div className="mt-4 flex items-center justify-between rounded-xl bg-stone-50 p-3">
           <span className="text-sm">
             <b>{rows.length}</b> soal siap diimpor
           </span>
@@ -168,7 +168,7 @@ function PackagesModal({ selected, onClose, onLoad }: { selected: string[]; onCl
   return (
     <Shell title="Paket soal" onClose={onClose} wide={false}>
       <p className="text-sm text-muted">Paket = kumpulan soal pilihan guru, dipakai untuk tantangan kelas.</p>
-      <div className="mt-4 space-y-2 rounded-2xl bg-slate-50 p-4">
+      <div className="mt-4 space-y-2 rounded-2xl bg-stone-50 p-4">
         <p className="text-sm font-bold">Paket baru dari {selected.length} soal yang dicentang</p>
         <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama paket, mis. Latihan I'rab Pekan 3" className="w-full rounded-xl border border-line px-3 py-2 text-sm" />
         <input value={desc} onChange={(e) => setDesc(e.target.value)} placeholder="Keterangan (opsional)" className="w-full rounded-xl border border-line px-3 py-2 text-sm" />
@@ -197,7 +197,7 @@ function PackagesModal({ selected, onClose, onLoad }: { selected: string[]; onCl
                 {p.question_count} soal · {p.class_name ?? 'Semua kelas'}
               </p>
             </div>
-            <button onClick={() => (onLoad(p.question_ids ?? []), onClose())} className="rounded-lg px-2 py-1 text-xs font-semibold text-primary hover:bg-slate-100">
+            <button onClick={() => (onLoad(p.question_ids ?? []), onClose())} className="rounded-lg px-2 py-1 text-xs font-semibold text-primary hover:bg-stone-100">
               Tampilkan
             </button>
             <button
@@ -278,10 +278,10 @@ export default function QuestionBankPage() {
           <BookOpen /> Bank Soal
         </h1>
         <div className="flex flex-wrap gap-2">
-          <button onClick={() => setModal('packages')} className="flex items-center gap-1.5 rounded-xl border border-line bg-white px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+          <button onClick={() => setModal('packages')} className="flex items-center gap-1.5 rounded-xl border border-line bg-white px-3 py-2 text-sm font-semibold hover:bg-stone-50">
             <Package size={16} /> Paket soal {selected.size > 0 && `(${selected.size} dicentang)`}
           </button>
-          <button onClick={() => setModal('import')} className="flex items-center gap-1.5 rounded-xl border border-line bg-white px-3 py-2 text-sm font-semibold hover:bg-slate-50">
+          <button onClick={() => setModal('import')} className="flex items-center gap-1.5 rounded-xl border border-line bg-white px-3 py-2 text-sm font-semibold hover:bg-stone-50">
             <FileUp size={16} /> Impor CSV
           </button>
           <button onClick={() => setEditing(null)} className="flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white">
@@ -355,8 +355,8 @@ export default function QuestionBankPage() {
         {!rows && <Loader2 className="mx-auto my-10 animate-spin text-primary" />}
         {rows && shown.length === 0 && <p className="p-8 text-center text-sm text-muted">Tidak ada soal untuk filter ini.</p>}
         {shown.map((q) => (
-          <div key={q.id} className={`flex items-start gap-3 p-3 sm:p-4 ${q.is_published ? '' : 'bg-slate-50 opacity-70'}`}>
-            <input type="checkbox" checked={selected.has(q.id)} onChange={() => toggle(q.id)} aria-label="Pilih soal untuk paket" className="mt-1 size-4 accent-[#173b57]" />
+          <div key={q.id} className={`flex items-start gap-3 p-3 sm:p-4 ${q.is_published ? '' : 'bg-stone-50 opacity-70'}`}>
+            <input type="checkbox" checked={selected.has(q.id)} onChange={() => toggle(q.id)} aria-label="Pilih soal untuk paket" className="mt-1 size-4 accent-primary" />
             <div className="min-w-0 flex-1">
               <p className="text-sm font-semibold">
                 <RichText text={q.prompt} />
@@ -364,11 +364,11 @@ export default function QuestionBankPage() {
               {q.prompt_ar && <p className="arabic text-right text-lg text-primary" dir="rtl">{q.prompt_ar.replace(/\[\[|\]\]/g, '')}</p>}
               <div className="mt-1 flex flex-wrap gap-1.5 text-[11px]">
                 <span className={`rounded-full px-2 py-0.5 font-semibold ${ARENA_BY_DB[q.arena].color.soft} ${ARENA_BY_DB[q.arena].color.text}`}>{GAME_TYPE_LABEL[q.game_type] ?? q.game_type}</span>
-                <span className="rounded-full bg-slate-100 px-2 py-0.5">{q.category_name}</span>
-                <span className="rounded-full bg-slate-100 px-2 py-0.5">{DIFFICULTY_LABEL[q.difficulty]}</span>
+                <span className="rounded-full bg-stone-100 px-2 py-0.5">{q.category_name}</span>
+                <span className="rounded-full bg-stone-100 px-2 py-0.5">{DIFFICULTY_LABEL[q.difficulty]}</span>
                 {q.variety === 'amiyah_mesir' && <span className="rounded-full bg-amber-50 px-2 py-0.5 text-amber-700">Amiyah</span>}
                 <span className={`rounded-full px-2 py-0.5 ${q.is_global ? 'bg-sky-50 text-sky-700' : 'bg-emerald-50 text-emerald-700'}`}>{q.is_global ? 'Bawaan' : 'Lembaga'}</span>
-                {!q.is_published && <span className="rounded-full bg-slate-200 px-2 py-0.5">Tidak terbit</span>}
+                {!q.is_published && <span className="rounded-full bg-stone-200 px-2 py-0.5">Tidak terbit</span>}
               </div>
             </div>
             <div className="hidden w-24 shrink-0 text-right text-xs sm:block">
@@ -382,7 +382,7 @@ export default function QuestionBankPage() {
               )}
             </div>
             <div className="flex shrink-0 gap-1">
-              <button onClick={() => setEditing(q.id)} aria-label={q.editable ? 'Ubah soal' : 'Lihat soal'} className="rounded-lg p-2 text-muted hover:bg-slate-100 hover:text-primary">
+              <button onClick={() => setEditing(q.id)} aria-label={q.editable ? 'Ubah soal' : 'Lihat soal'} className="rounded-lg p-2 text-muted hover:bg-stone-100 hover:text-primary">
                 <Pencil size={16} />
               </button>
               {q.editable && (

@@ -228,7 +228,7 @@ export default function QuestionEditor({ id, onClose, onSaved }: { id: string | 
                 {q.options.map((o, i) => (
                   <div key={i} className="flex items-center gap-2">
                     {!isBuilder && (
-                      <input type="radio" name="correct" checked={q.correct === i + 1} onChange={() => set({ correct: i + 1 })} aria-label={`Jawaban benar: pilihan ${i + 1}`} className="size-4 accent-[#0f9d8a]" />
+                      <input type="radio" name="correct" checked={q.correct === i + 1} onChange={() => set({ correct: i + 1 })} aria-label={`Jawaban benar: pilihan ${i + 1}`} className="size-4 accent-mufrodat" />
                     )}
                     <input
                       dir={ARABIC.test(o) ? 'rtl' : 'auto'}
@@ -238,7 +238,7 @@ export default function QuestionEditor({ id, onClose, onSaved }: { id: string | 
                       className={ARABIC.test(o) ? arabicInput : inputClass}
                     />
                     {q.options.length > 2 && (
-                      <button type="button" onClick={() => set({ options: q.options.filter((_, j) => j !== i), correct: q.correct && q.correct > i + 1 ? q.correct - 1 : q.correct === i + 1 ? 1 : q.correct })} aria-label="Hapus pilihan" className="rounded-lg p-2 text-muted hover:bg-slate-100">
+                      <button type="button" onClick={() => set({ options: q.options.filter((_, j) => j !== i), correct: q.correct && q.correct > i + 1 ? q.correct - 1 : q.correct === i + 1 ? 1 : q.correct })} aria-label="Hapus pilihan" className="rounded-lg p-2 text-muted hover:bg-stone-100">
                         <Trash2 size={15} />
                       </button>
                     )}
@@ -274,7 +274,7 @@ export default function QuestionEditor({ id, onClose, onSaved }: { id: string | 
                   <button type="button" onClick={() => set({ image_url: '' })} className="text-xs font-semibold text-red-600">Hapus</button>
                 </div>
               ) : (
-                <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-line px-3 py-2.5 text-sm text-muted hover:bg-slate-50">
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-line px-3 py-2.5 text-sm text-muted hover:bg-stone-50">
                   {uploading === 'image' ? <Loader2 size={16} className="animate-spin" /> : <ImagePlus size={16} />} Unggah gambar
                   <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" className="hidden" onChange={(e) => upload('image', e.target.files?.[0])} />
                 </label>
@@ -288,7 +288,7 @@ export default function QuestionEditor({ id, onClose, onSaved }: { id: string | 
                   <button type="button" onClick={() => set({ audio_url: '' })} className="text-xs font-semibold text-red-600">Hapus</button>
                 </div>
               ) : (
-                <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-line px-3 py-2.5 text-sm text-muted hover:bg-slate-50">
+                <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-dashed border-line px-3 py-2.5 text-sm text-muted hover:bg-stone-50">
                   {uploading === 'audio' ? <Loader2 size={16} className="animate-spin" /> : <Music size={16} />} Unggah audio
                   <input type="file" accept="audio/*" className="hidden" onChange={(e) => upload('audio', e.target.files?.[0])} />
                 </label>
@@ -351,7 +351,7 @@ export function Shell({ title, onClose, children, wide = true }: { title: string
       <div className={`mx-auto rounded-3xl bg-white p-5 shadow-2xl sm:p-6 ${wide ? 'max-w-5xl' : 'max-w-xl'}`}>
         <div className="mb-4 flex items-center justify-between">
           <h2 className="text-lg font-extrabold text-primary">{title}</h2>
-          <button onClick={onClose} aria-label="Tutup" className="rounded-lg p-2 hover:bg-slate-100">
+          <button onClick={onClose} aria-label="Tutup" className="rounded-lg p-2 hover:bg-stone-100">
             <X size={18} />
           </button>
         </div>

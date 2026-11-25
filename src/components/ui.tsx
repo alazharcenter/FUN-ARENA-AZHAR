@@ -53,7 +53,7 @@ export function ArabicMarked({ text, className = '' }: { text: string; className
 
 export function StageBadge({ stage }: { stage: number }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-muted">
+    <span className="inline-flex items-center rounded-full bg-stone-100 px-2 py-0.5 text-[11px] font-semibold text-muted">
       Tahap {stage}
     </span>
   )
@@ -85,7 +85,7 @@ export function Logo({ light = false }: { light?: boolean }) {
 export function ProgressBar({ value, max, className = 'bg-primary' }: { value: number; max: number; className?: string }) {
   const pct = Math.max(0, Math.min(100, (value / max) * 100))
   return (
-    <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
+    <div className="h-2 w-full overflow-hidden rounded-full bg-stone-100">
       <div className={`h-full rounded-full transition-all duration-700 ${className}`} style={{ width: `${pct}%` }} />
     </div>
   )

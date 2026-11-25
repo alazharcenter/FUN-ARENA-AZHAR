@@ -103,7 +103,7 @@ export default function MyClassesPage() {
                     {c.teacher_name} · {DIFFICULTY_LABEL[c.level]} · <Users size={12} className="inline" /> {c.members} santri
                   </p>
                 </div>
-                <button onClick={() => leave(c)} className="flex items-center gap-1 rounded-lg px-2 py-1 text-xs text-muted hover:bg-slate-100">
+                <button onClick={() => leave(c)} className="flex items-center gap-1 rounded-lg px-2 py-1 text-xs text-muted hover:bg-stone-100">
                   <LogOut size={14} /> Keluar
                 </button>
               </div>

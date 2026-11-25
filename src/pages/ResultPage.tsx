@@ -128,7 +128,7 @@ export default function ResultPage() {
         >
           <RotateCcw size={18} /> Main lagi
         </Link>
-        <Link to="/app" className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-white py-3 text-sm font-bold text-primary hover:bg-slate-50">
+        <Link to="/app" className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line bg-white py-3 text-sm font-bold text-primary hover:bg-stone-50">
           <Home size={18} /> Beranda
         </Link>
       </div>
@@ -171,7 +171,7 @@ export default function ResultPage() {
                   </div>
                 )}
               </dl>
-              <p className="mt-2 rounded-xl bg-slate-50 p-3 text-sm leading-relaxed">
+              <p className="mt-2 rounded-xl bg-stone-50 p-3 text-sm leading-relaxed">
                 <RichText text={r.explanation} />
               </p>
             </article>

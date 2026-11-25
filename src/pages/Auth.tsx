@@ -6,7 +6,7 @@ import { useAuth } from '../lib/useAuth'
 import { errorMessage, supabase } from '../lib/supabase'
 
 const inputClass =
-  'w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/15'
+  'w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition placeholder:text-stone-400 focus:border-primary focus:ring-2 focus:ring-primary/15'
 
 // Pesan error Supabase Auth → bahasa Indonesia
 function translate(msg: string) {

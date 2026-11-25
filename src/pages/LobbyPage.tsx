@@ -55,7 +55,7 @@ function ActiveRooms() {
       <h2 className="font-bold">Room yang sedang kamu ikuti</h2>
       <div className="mt-3 space-y-2">
         {rooms.map((r) => (
-          <Link key={r.code} to={`/app/room/${r.code}`} className="flex items-center gap-3 rounded-xl border border-line p-3 hover:bg-slate-50">
+          <Link key={r.code} to={`/app/room/${r.code}`} className="flex items-center gap-3 rounded-xl border border-line p-3 hover:bg-stone-50">
             <span className="font-mono text-lg font-bold tracking-widest text-primary">{r.code}</span>
             <span className="flex-1 text-sm text-muted">
               {r.game === 'snake' ? 'Ular Tangga' : 'Quiz Battle'} · {r.players} orang · {r.status === 'lobby' ? 'menunggu' : 'sedang bermain'}
@@ -135,7 +135,7 @@ export default function LobbyPage() {
                   setGame(id)
                   setTime(id === 'snake' ? 30 : null)
                 }}
-                className={`flex items-center gap-3 rounded-2xl border-2 p-3 text-left transition ${game === id ? 'border-primary bg-primary/5' : 'border-line hover:bg-slate-50'}`}
+                className={`flex items-center gap-3 rounded-2xl border-2 p-3 text-left transition ${game === id ? 'border-primary bg-primary/5' : 'border-line hover:bg-stone-50'}`}
               >
                 <span className={`grid size-10 shrink-0 place-items-center rounded-xl ${ARENAS[icon].color.bg} text-white`}>
                   <ArenaIcon arena={icon} size={20} />
@@ -263,7 +263,7 @@ export default function LobbyPage() {
           </Field>
 
           <Field label={<>Maksimal pemain: <span className="text-primary">{maxPlayers}</span></>}>
-            <input type="range" min={2} max={30} value={maxPlayers} onChange={(e) => setMaxPlayers(+e.target.value)} className="w-full accent-[#173b57]" aria-label="Maksimal pemain" />
+            <input type="range" min={2} max={30} value={maxPlayers} onChange={(e) => setMaxPlayers(+e.target.value)} className="w-full accent-primary" aria-label="Maksimal pemain" />
           </Field>
 
           <Toggle

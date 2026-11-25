@@ -90,7 +90,7 @@ export default function AdminPage() {
           <h2 className="font-bold">Materi paling banyak dimainkan (7 hari)</h2>
           <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {stats.top_categories.map((c) => (
-              <div key={c.name} className="flex items-center justify-between rounded-xl bg-slate-50 px-3 py-2 text-sm">
+              <div key={c.name} className="flex items-center justify-between rounded-xl bg-stone-50 px-3 py-2 text-sm">
                 <span>
                   {c.name}
                   <span className="block text-[11px] text-muted">{ARENA_BY_DB[c.arena].name}</span>
@@ -116,7 +116,7 @@ export default function AdminPage() {
         {!users && <Loader2 className="mx-auto my-8 animate-spin text-primary" />}
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] text-sm">
-            <thead className="bg-slate-50 text-left text-xs text-muted">
+            <thead className="bg-stone-50 text-left text-xs text-muted">
               <tr>
                 <th className="px-4 py-2">Pengguna</th>
                 {isSuper && <th className="px-2 py-2">Lembaga</th>}
@@ -166,7 +166,7 @@ export default function AdminPage() {
             <h2 className="font-bold">Lembaga</h2>
             <ul className="space-y-1 text-sm">
               {stats?.institutions?.map((i) => (
-                <li key={i.id} className="flex justify-between rounded-lg bg-slate-50 px-3 py-2">
+                <li key={i.id} className="flex justify-between rounded-lg bg-stone-50 px-3 py-2">
                   <span>
                     {i.name} <span className="text-xs text-muted">({i.slug})</span>
                   </span>

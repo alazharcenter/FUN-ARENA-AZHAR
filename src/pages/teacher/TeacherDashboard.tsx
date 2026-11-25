@@ -77,7 +77,7 @@ export default function TeacherDashboard() {
           )}
           <div className="space-y-2">
             {classes?.map((c) => (
-              <Link key={c.id} to={`/guru/kelas/${c.id}`} className="card flex items-center gap-3 p-4 hover:bg-slate-50">
+              <Link key={c.id} to={`/guru/kelas/${c.id}`} className="card flex items-center gap-3 p-4 hover:bg-stone-50">
                 <div className="min-w-0 flex-1">
                   <p className="font-bold">{c.name}</p>
                   <p className="text-xs text-muted">

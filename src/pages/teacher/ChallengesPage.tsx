@@ -135,10 +135,10 @@ export default function ChallengesPage() {
           )}
           <div className="grid gap-3 sm:grid-cols-2">
             <Field label={<>Jumlah soal: <span className="text-primary">{target}</span></>}>
-              <input type="range" min={3} max={30} value={target} onChange={(e) => setTarget(+e.target.value)} className="w-full accent-[#173b57]" aria-label="Jumlah soal" />
+              <input type="range" min={3} max={30} value={target} onChange={(e) => setTarget(+e.target.value)} className="w-full accent-primary" aria-label="Jumlah soal" />
             </Field>
             <Field label={<>Bonus XP: <span className="text-primary">{xp}</span></>}>
-              <input type="range" min={0} max={300} step={10} value={xp} onChange={(e) => setXp(+e.target.value)} className="w-full accent-[#173b57]" aria-label="Bonus XP" />
+              <input type="range" min={0} max={300} step={10} value={xp} onChange={(e) => setXp(+e.target.value)} className="w-full accent-primary" aria-label="Bonus XP" />
             </Field>
             <Field label="Mulai">
               <input type="date" value={start} onChange={(e) => setStart(e.target.value)} className={inputClass} />
@@ -173,7 +173,7 @@ export default function ChallengesPage() {
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-1">
-                    <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${status === 'Aktif' ? 'bg-emerald-50 text-emerald-700' : status === 'Terjadwal' ? 'bg-sky-50 text-sky-700' : 'bg-slate-100 text-muted'}`}>{status}</span>
+                    <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${status === 'Aktif' ? 'bg-emerald-50 text-emerald-700' : status === 'Terjadwal' ? 'bg-sky-50 text-sky-700' : 'bg-stone-100 text-muted'}`}>{status}</span>
                     <button
                       onClick={async () => {
                         if (confirm(`Hapus tantangan "${c.title}"?`)) {

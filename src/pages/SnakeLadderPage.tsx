@@ -121,7 +121,7 @@ export default function SnakeLadderPage() {
                     className="min-w-0 flex-1 rounded-xl border border-line px-3 py-2 text-sm outline-none focus:border-snake focus:ring-2 focus:ring-snake/15"
                   />
                   {names.length > 1 && (
-                    <button onClick={() => setNames(names.filter((_, j) => j !== i))} aria-label={`Hapus pemain ${i + 1}`} className="rounded-lg p-2 text-muted hover:bg-slate-100">
+                    <button onClick={() => setNames(names.filter((_, j) => j !== i))} aria-label={`Hapus pemain ${i + 1}`} className="rounded-lg p-2 text-muted hover:bg-stone-100">
                       <X size={16} />
                     </button>
                   )}

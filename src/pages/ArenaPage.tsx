@@ -67,7 +67,7 @@ export default function ArenaPage({ id }: { id: Exclude<ArenaId, 'snake'> }) {
                   key={d.id}
                   onClick={() => setDifficulty(d.id)}
                   className={`rounded-xl border px-3 py-2.5 text-left transition ${
-                    difficulty === d.id ? `${a.color.border} ${a.color.soft}` : 'border-line hover:bg-slate-50'
+                    difficulty === d.id ? `${a.color.border} ${a.color.soft}` : 'border-line hover:bg-stone-50'
                   }`}
                 >
                   <span className={`block text-sm font-bold ${difficulty === d.id ? a.color.text : ''}`}>{d.label}</span>
@@ -88,7 +88,7 @@ export default function ArenaPage({ id }: { id: Exclude<ArenaId, 'snake'> }) {
             </Link>
             <Link
               to="/app/lobby"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-line px-6 py-3 text-sm font-bold text-primary hover:bg-slate-50"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-line px-6 py-3 text-sm font-bold text-primary hover:bg-stone-50"
             >
               <Users size={18} /> Main Bareng
             </Link>
@@ -116,7 +116,7 @@ export default function ArenaPage({ id }: { id: Exclude<ArenaId, 'snake'> }) {
                     ) : g.stage > CURRENT_STAGE ? (
                       <StageBadge stage={g.stage} />
                     ) : (
-                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-muted">
+                      <span className="rounded-full bg-stone-100 px-2 py-0.5 text-[11px] font-semibold text-muted">
                         {typeCounts ? 'Belum ada soal' : '…'}
                       </span>
                     )}

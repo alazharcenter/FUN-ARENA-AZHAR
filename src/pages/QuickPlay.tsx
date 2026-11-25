@@ -83,7 +83,7 @@ export default function QuickPlay() {
                 setCategory(null)
                 setGameType(null)
               }}
-              className={`card flex items-center gap-3 p-4 text-left transition ${active ? `ring-2 ${x.color.ring}` : 'hover:bg-slate-50'}`}
+              className={`card flex items-center gap-3 p-4 text-left transition ${active ? `ring-2 ${x.color.ring}` : 'hover:bg-stone-50'}`}
             >
               <span className={`grid size-11 shrink-0 place-items-center rounded-xl ${active ? `${x.color.bg} text-white` : `${x.color.soft} ${x.color.text}`}`}>
                 <ArenaIcon arena={id} size={22} />
@@ -107,7 +107,7 @@ export default function QuickPlay() {
                 key={d.label}
                 onClick={() => setDifficulty(d.id as Difficulty | null)}
                 className={`rounded-xl border px-4 py-2 text-sm font-semibold transition ${
-                  difficulty === d.id ? `${a.color.border} ${a.color.soft} ${a.color.text}` : 'border-line hover:bg-slate-50'
+                  difficulty === d.id ? `${a.color.border} ${a.color.soft} ${a.color.text}` : 'border-line hover:bg-stone-50'
                 }`}
               >
                 {d.label}
@@ -123,7 +123,7 @@ export default function QuickPlay() {
                 key={n}
                 onClick={() => setCount(n)}
                 className={`w-14 rounded-xl border py-2 text-sm font-semibold transition ${
-                  count === n ? `${a.color.border} ${a.color.soft} ${a.color.text}` : 'border-line hover:bg-slate-50'
+                  count === n ? `${a.color.border} ${a.color.soft} ${a.color.text}` : 'border-line hover:bg-stone-50'
                 }`}
               >
                 {n}
@@ -139,7 +139,7 @@ export default function QuickPlay() {
           <h2 className="text-base font-bold">Materi</h2>
           <button
             onClick={() => setCategory(null)}
-            className={`rounded-full px-3 py-1 text-xs font-semibold ${category === null ? `${a.color.bg} text-white` : 'bg-slate-100 text-muted'}`}
+            className={`rounded-full px-3 py-1 text-xs font-semibold ${category === null ? `${a.color.bg} text-white` : 'bg-stone-100 text-muted'}`}
           >
             Semua materi
           </button>
@@ -169,7 +169,7 @@ export default function QuickPlay() {
                     onClick={() => setCategory(active ? null : item.category_slug)}
                     aria-pressed={active}
                     className={`card flex flex-col items-start gap-1 p-3.5 text-left transition disabled:cursor-not-allowed disabled:opacity-45 ${
-                      active ? `ring-2 ${a.color.ring}` : 'enabled:hover:bg-slate-50'
+                      active ? `ring-2 ${a.color.ring}` : 'enabled:hover:bg-stone-50'
                     }`}
                   >
                     {item.category_name_ar && (

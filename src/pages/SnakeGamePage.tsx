@@ -319,7 +319,7 @@ export default function SnakeGamePage() {
           {/* Pemain */}
           <section className="card divide-y divide-line">
             {state.players.map((p, i) => (
-              <div key={i} className={`flex items-center gap-3 px-4 py-3 ${i === state.turn && state.winner === null ? 'bg-slate-50' : ''}`}>
+              <div key={i} className={`flex items-center gap-3 px-4 py-3 ${i === state.turn && state.winner === null ? 'bg-stone-50' : ''}`}>
                 <span className={`size-4 shrink-0 rounded-full ${PIECE_COLORS[p.color].className}`} />
                 <span className="min-w-0 flex-1 truncate text-sm font-semibold">
                   {p.name} {state.winner === i && <Crown size={14} className="inline text-gold" />}
@@ -415,7 +415,7 @@ export default function SnakeGamePage() {
           <ol className="mt-5 space-y-2">
             {ranking.map((p, r) => (
               <li key={p.i} className={`card flex items-center gap-3 p-3 ${r === 0 ? 'ring-2 ring-gold' : ''}`}>
-                <span className="grid size-8 place-items-center rounded-full bg-slate-100 text-sm font-extrabold">{r + 1}</span>
+                <span className="grid size-8 place-items-center rounded-full bg-stone-100 text-sm font-extrabold">{r + 1}</span>
                 <span className={`size-4 rounded-full ${PIECE_COLORS[p.color].className}`} />
                 <span className="flex-1 font-semibold">{p.name}</span>
                 <span className="text-xs text-muted">
@@ -437,13 +437,13 @@ export default function SnakeGamePage() {
             </p>
           )}
           <div className="mt-5 grid gap-2 sm:grid-cols-3">
-            <Link to={`/app/hasil/${sessionId}`} className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-slate-50">
+            <Link to={`/app/hasil/${sessionId}`} className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-stone-50">
               Ulasan jawaban
             </Link>
             <Link to="/app/arena/ular-tangga" className="rounded-xl bg-snake py-3 text-center text-sm font-bold text-white hover:brightness-110">
               Main lagi
             </Link>
-            <Link to="/app" className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-slate-50">
+            <Link to="/app" className="rounded-xl border border-line bg-white py-3 text-center text-sm font-bold text-primary hover:bg-stone-50">
               Beranda
             </Link>
           </div>
@@ -470,7 +470,7 @@ function Shell({ children, onQuit }: { children: ReactNode; onQuit?: () => void 
             Arabic Snake & Ladder <Arabic className="text-base text-snake">سُلَّمُ الْعَرَبِيَّةِ</Arabic>
           </span>
           {onQuit && (
-            <button onClick={onQuit} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-muted hover:bg-slate-100">
+            <button onClick={onQuit} className="flex items-center gap-1 rounded-lg px-2 py-1.5 text-sm font-medium text-muted hover:bg-stone-100">
               <X size={18} /> Akhiri
             </button>
           )}

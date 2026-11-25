@@ -42,7 +42,7 @@ export function QuestionView({
       {/* Timer */}
       <div className="flex items-center gap-3">
         <Clock size={18} className={timeLeft < 5000 && !locked ? 'text-red-500' : 'text-muted'} />
-        <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-slate-200">
+        <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-stone-200">
           <div
             className={`h-full rounded-full transition-[width] duration-100 ${pct < 25 ? 'bg-red-500' : pct < 50 ? 'bg-amber-400' : 'bg-emerald-500'}`}
             style={{ width: `${pct}%` }}
@@ -55,7 +55,7 @@ export function QuestionView({
       <section className="card mt-5 p-5 text-center sm:p-8">
         <div className="flex flex-wrap items-center justify-center gap-1.5 text-[11px] font-semibold">
           <span className={`rounded-full px-2.5 py-1 ${arena.color.soft} ${arena.color.text}`}>{GAME_TYPE_LABEL[q.game_type] ?? q.game_type}</span>
-          <span className="rounded-full bg-slate-100 px-2.5 py-1 text-muted">{DIFFICULTY_LABEL[q.difficulty]}</span>
+          <span className="rounded-full bg-stone-100 px-2.5 py-1 text-muted">{DIFFICULTY_LABEL[q.difficulty]}</span>
           <span className={`rounded-full px-2.5 py-1 ${q.variety === 'fusha' ? 'bg-sky-50 text-sky-700' : 'bg-amber-50 text-amber-700'}`}>
             {q.variety === 'fusha' ? 'Fusha' : 'Amiyah Mesir'}
           </span>
@@ -90,7 +90,7 @@ export function QuestionView({
           {q.options.map((o, i) => {
             const isCorrect = revealed && correctOptionId === o.id
             const isChosen = chosen === o.id
-            let style = 'border-line bg-white hover:border-primary/40 hover:bg-slate-50'
+            let style = 'border-line bg-white hover:border-primary/40 hover:bg-stone-50'
             if (locked && isChosen) style = 'border-primary bg-primary/5'
             if (revealed) {
               if (isCorrect) style = 'border-emerald-400 bg-emerald-50 text-emerald-800'
@@ -105,7 +105,7 @@ export function QuestionView({
                 className={`flex min-h-16 items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left font-semibold transition ${style}`}
               >
                 {!isTrueFalse && (
-                  <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-slate-100 text-xs font-bold text-muted">
+                  <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-stone-100 text-xs font-bold text-muted">
                     {String.fromCharCode(65 + i)}
                   </span>
                 )}

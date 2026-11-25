@@ -47,7 +47,7 @@ export default function MissionCard({ m, onClaimed }: { m: Mission; onClaimed: (
           <button
             onClick={claim}
             disabled={!done || busy}
-            className="flex items-center gap-1 rounded-lg bg-gold px-3 py-1.5 text-xs font-bold text-primary-dark disabled:bg-slate-100 disabled:text-muted"
+            className="flex items-center gap-1 rounded-lg bg-gold px-3 py-1.5 text-xs font-bold text-primary-dark disabled:bg-stone-100 disabled:text-muted"
           >
             {busy ? <Loader2 size={14} className="animate-spin" /> : <Gift size={14} />} Klaim
           </button>

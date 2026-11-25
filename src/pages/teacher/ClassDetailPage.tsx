@@ -35,7 +35,7 @@ function StudentDrawer({ student, onClose }: { student: ClassMember; onClose: ()
             <p className="text-xl font-extrabold text-primary">{student.nickname}</p>
             <p className="text-sm text-muted">{student.full_name}</p>
           </div>
-          <button onClick={onClose} aria-label="Tutup" className="rounded-lg p-2 hover:bg-slate-100">
+          <button onClick={onClose} aria-label="Tutup" className="rounded-lg p-2 hover:bg-stone-100">
             <X size={18} />
           </button>
         </div>
@@ -177,8 +177,8 @@ export default function ClassDetailPage() {
             {DIFFICULTY_LABEL[c.level]} · Guru: {c.teacher_name}
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <button onClick={rename} className="rounded-lg border border-line px-3 py-1.5 font-semibold hover:bg-slate-50">Ubah nama</button>
-            <button onClick={newCode} className="flex items-center gap-1 rounded-lg border border-line px-3 py-1.5 font-semibold hover:bg-slate-50">
+            <button onClick={rename} className="rounded-lg border border-line px-3 py-1.5 font-semibold hover:bg-stone-50">Ubah nama</button>
+            <button onClick={newCode} className="flex items-center gap-1 rounded-lg border border-line px-3 py-1.5 font-semibold hover:bg-stone-50">
               <RefreshCw size={12} /> Kode baru
             </button>
             <button onClick={remove} className="flex items-center gap-1 rounded-lg border border-red-200 px-3 py-1.5 font-semibold text-red-600 hover:bg-red-50">
@@ -226,7 +226,7 @@ export default function ClassDetailPage() {
             ['tantangan', 'Tantangan'],
           ] as const
         ).map(([k, label]) => (
-          <button key={k} onClick={() => setTab(k)} className={`rounded-full px-4 py-2 text-sm font-semibold ${tab === k ? 'bg-primary text-white' : 'bg-white text-muted ring-1 ring-line hover:bg-slate-50'}`}>
+          <button key={k} onClick={() => setTab(k)} className={`rounded-full px-4 py-2 text-sm font-semibold ${tab === k ? 'bg-primary text-white' : 'bg-white text-muted ring-1 ring-line hover:bg-stone-50'}`}>
             {label}
           </button>
         ))}
@@ -236,7 +236,7 @@ export default function ClassDetailPage() {
         <section className="card overflow-hidden">
           <div className="flex items-center justify-between border-b border-line px-4 py-3">
             <p className="text-sm font-bold">{data.members.length} santri</p>
-            <button onClick={exportCsv} disabled={!data.members.length} className="flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 text-xs font-semibold hover:bg-slate-50 disabled:opacity-40">
+            <button onClick={exportCsv} disabled={!data.members.length} className="flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 text-xs font-semibold hover:bg-stone-50 disabled:opacity-40">
               <Download size={14} /> Ekspor CSV
             </button>
           </div>
@@ -245,7 +245,7 @@ export default function ClassDetailPage() {
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] text-sm">
-                <thead className="bg-slate-50 text-left text-xs text-muted">
+                <thead className="bg-stone-50 text-left text-xs text-muted">
                   <tr>
                     <th className="px-4 py-2">Santri</th>
                     <th className="px-2 py-2 text-right">Level</th>
@@ -259,7 +259,7 @@ export default function ClassDetailPage() {
                 </thead>
                 <tbody className="divide-y divide-line">
                   {data.members.map((m) => (
-                    <tr key={m.user_id} className="cursor-pointer hover:bg-slate-50" onClick={() => setSelected(m)}>
+                    <tr key={m.user_id} className="cursor-pointer hover:bg-stone-50" onClick={() => setSelected(m)}>
                       <td className="px-4 py-2.5">
                         <span className="font-semibold">{m.nickname}</span>
                         <span className="block text-[11px] text-muted">{m.full_name}</span>

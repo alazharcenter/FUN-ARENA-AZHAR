@@ -99,10 +99,10 @@ export default function AppLayout() {
           <Logo />
         </Link>
         <div className="flex items-center gap-1">
-          <Link to="/pengaturan" aria-label="Pengaturan" className="rounded-lg p-2 text-muted hover:bg-slate-100">
+          <Link to="/pengaturan" aria-label="Pengaturan" className="rounded-lg p-2 text-muted hover:bg-stone-100">
             <Settings size={20} />
           </Link>
-          <button onClick={logout} aria-label="Keluar" className="rounded-lg p-2 text-muted hover:bg-slate-100">
+          <button onClick={logout} aria-label="Keluar" className="rounded-lg p-2 text-muted hover:bg-stone-100">
             <LogOut size={20} />
           </button>
         </div>

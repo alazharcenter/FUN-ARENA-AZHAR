@@ -104,7 +104,7 @@ export default function Landing() {
                     </span>
                   ))}
                 </div>
-                <p className="mt-4 rounded-xl bg-slate-50 p-3 text-xs leading-relaxed text-muted">
+                <p className="mt-4 rounded-xl bg-stone-50 p-3 text-xs leading-relaxed text-muted">
                   <Arabic className="text-sm text-ink">مَكْتَبَةٌ</Arabic> berpola <Arabic className="text-sm text-ink">مَفْعَلَةٌ</Arabic>{' '}
                   (isim makan): tempat kegiatan <Arabic className="text-sm text-ink">كَتَبَ</Arabic> — perpustakaan.
                 </p>
