@@ -4,7 +4,7 @@
 // Opsi: --only=qowaid --out=file.sql  → hanya soal dari satu modul (untuk menambah soal baru)
 //       --part=1/2                      → bagi soal menjadi beberapa file (jika terlalu besar)
 import { createHash } from 'node:crypto'
-import { writeFileSync } from 'node:fs'
+import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { CATEGORIES, QUESTIONS as MUFRODAT } from '../supabase/seed/data.mjs'
 import { QUESTIONS as QOWAID } from '../supabase/seed/data-qowaid.mjs'
 import { QUESTIONS as MUFRODAT2 } from '../supabase/seed/data-mufrodat-2.mjs'
@@ -13,6 +13,18 @@ import { QUESTIONS as MUFRODAT3 } from '../supabase/seed/data-mufrodat-3.mjs'
 import { QUESTIONS as QOWAID3 } from '../supabase/seed/data-qowaid-3.mjs'
 
 const MODULES = { mufrodat: MUFRODAT, qowaid: QOWAID, mufrodat2: MUFRODAT2, qowaid2: QOWAID2, mufrodat3: MUFRODAT3, qowaid3: QOWAID3 }
+
+// Soal format JSON ringkas di supabase/seed/json/*.json (nama file tanpa .json = nama modul):
+//   c kategori, t jenis, l tingkat, p prompt, a teks Arab (opsional), o pilihan (benar di urutan pertama;
+//   untuk sentence_builder = potongan kata), k indeks jawaban benar (khusus true_false), acc susunan benar
+//   (khusus sentence_builder), e penjelasan, v ragam bahasa (opsional, default fusha)
+const JSON_DIR = new URL('../supabase/seed/json/', import.meta.url)
+for (const f of readdirSync(JSON_DIR).filter((f) => f.endsWith('.json')).sort()) {
+  MODULES[f.replace(/\.json$/, '')] = JSON.parse(readFileSync(new URL(f, JSON_DIR), 'utf8')).map((q) => ({
+    cat: q.c, type: q.t, level: q.l, prompt: q.p, ar: q.a, explanation: q.e, variety: q.v,
+    ...(q.t === 'sentence_builder' ? { tiles: q.o, accepted: q.acc } : { options: q.o, answer: q.k }),
+  }))
+}
 const args = Object.fromEntries(process.argv.slice(2).map((a) => a.replace(/^--/, '').split('=')))
 const QUESTIONS = args.only ? MODULES[args.only] : Object.values(MODULES).flat()
 if (!QUESTIONS) throw new Error(`Modul tidak dikenal: ${args.only}`)
