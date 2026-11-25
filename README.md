@@ -116,12 +116,14 @@ Bagian berlabel **Data Demo** (tantangan, badge, peringkat kelas) belum tersambu
 | `supabase/tests/` | Uji keamanan & permainan (`npm run test:db`) |
 | `supabase/seed/data.mjs` | Kategori + **51 soal Mufrodat & Muhadatsah** |
 | `supabase/seed/data-qowaid.mjs` | **72 soal Qowaid** (Nahwu, Shorof, I'rab) |
+| `supabase/seed/data-mufrodat-2.mjs` | **117 soal Mufrodat tambahan** |
+| `supabase/seed/data-qowaid-2.mjs` | **119 soal Qowaid tambahan** — total bank soal bawaan: 359 |
 | `supabase/seed/seed.sql` | Dihasilkan dengan `npm run seed:build` — aman dijalankan berulang (soal yang sudah ada dilewati) |
 
 Semua sudah diterapkan ke proyek Supabase **FUN ARENA ACP**.
 
 ### Menambah soal lewat file seed
-1. Tambahkan soal di `data.mjs` / `data-qowaid.mjs` (jawaban benar di urutan pertama; `[[kata]]` untuk menyorot kata yang ditanya).
+1. Tambahkan soal di salah satu file `supabase/seed/data*.mjs` (jawaban benar di urutan pertama; `[[kata]]` untuk menyorot kata yang ditanya).
 2. Jalankan `npm run seed:build` — generator memeriksa kategori, duplikat, dan kelengkapan penjelasan.
 3. Jalankan isi `supabase/seed/seed.sql` di Supabase → SQL Editor. Hanya soal baru yang ditambahkan.
 
