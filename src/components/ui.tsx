@@ -69,11 +69,7 @@ export function ArenaIcon({ arena, size = 22, className = '' }: { arena: ArenaId
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
-      <span className="grid size-9 place-items-center rounded-xl bg-primary shadow-sm ring-1 ring-white/10">
-        <svg viewBox="0 0 64 64" className="size-6" aria-hidden>
-          <path d="M32 8l6.5 13.2 14.5 2.1-10.5 10.3 2.5 14.5L32 41.3l-13 6.8 2.5-14.5L11 23.3l14.5-2.1z" fill="#E3A82B" />
-        </svg>
-      </span>
+      <img src="/logo-96.png" alt="" width={40} height={40} className="size-10 shrink-0 rounded-[10px] shadow-sm" />
       <span className="leading-tight">
         <span className={`block text-[15px] font-extrabold tracking-tight ${light ? 'text-white' : 'text-primary'}`}>
           Fun Arena

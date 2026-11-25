@@ -51,6 +51,7 @@ export default function Landing() {
 
           <div className="grid items-center gap-10 py-14 md:grid-cols-[1.15fr_1fr] md:py-20">
             <div>
+              <img src="/logo-192.png" alt="Logo Fun Arena Center" width={112} height={112} className="mb-6 size-24 rounded-[22px] shadow-2xl shadow-black/30 sm:size-28" />
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-white/85 ring-1 ring-white/15">
                 <Sparkles size={14} className="text-gold" /> Platform permainan bahasa Arab
               </span>
